@@ -18,8 +18,15 @@ add_executable(test_newton_find_root
   src/test_newton_find_root.cpp)
 target_include_directories(test_newton_find_root PRIVATE include)
 target_compile_definitions(test_newton_find_root PRIVATE -DAUTODIFF_EIGEN_FOUND)
+
+add_executable(test_newton_minimize
+  src/test_newton_minimize.cpp)
+target_include_directories(test_newton_minimize PRIVATE include)
+target_compile_definitions(test_newton_minimize PRIVATE -DAUTODIFF_EIGEN_FOUND)
+
 install (TARGETS
   test_newton_find_root
+  test_newton_minimize
 DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
